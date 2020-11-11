@@ -2,10 +2,11 @@ package com.insurance.PremiumCalculator.model;
 
 import java.util.Map;
 import java.util.stream.Collectors;
+import org.jetbrains.annotations.NotNull;
 
 public class PremiumCalculator {
 
-    public static double calculate(Policy policy) {
+    public static double calculate(@NotNull Policy policy) {
         Map<RiskType, Double> amountsByRisk = policy.getPolicyObjects().stream().flatMap(obj -> obj.getSubObjects().stream())
                 .collect(Collectors.groupingBy(subObj -> subObj.getRiskType(), Collectors.summingDouble(subObj -> subObj.getSum())));
 

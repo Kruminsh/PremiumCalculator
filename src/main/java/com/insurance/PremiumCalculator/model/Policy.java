@@ -8,6 +8,12 @@ public class Policy {
     private PolicyStatus policyStatus;
     private List<PolicyObject> policyObjects;
 
+    public Policy(String policyNumber, PolicyStatus policyStatus, List<PolicyObject> policyObjects) {
+        this.policyNumber = policyNumber;
+        this.policyStatus = policyStatus;
+        this.policyObjects = policyObjects;
+    }
+
     public String getPolicyNumber() {
         return this.policyNumber;
     }
