@@ -34,5 +34,6 @@ Request body example:
 Method groups all sub-objects by their risk type and calculates the respective sum.
 Premium amount is equal to the sum of each risk type sum multiplied by the coefficient of the respective risk type.
 
+### Adding new risk types
 Defintion of Risk types and their coefficient logic is located in RiskType enum.
 When it is necessary to extend the system with additional risk types, one must merely edit the RiskType enum without worrying about calculation logic.
