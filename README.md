@@ -37,3 +37,11 @@ Premium amount is equal to the sum of each risk type sum multiplied by the coeff
 ### Adding new risk types
 Defintion of Risk types and their coefficient logic is located in RiskType enum.
 When it is necessary to extend the system with additional risk types, one must merely edit the RiskType enum without worrying about calculation logic.
+
+### Unit Tests
+Unit Test **PremiumCalculatorApplicationTests.calculatePremiumTest()** tests the functionality of PremiumCalculator.calculate(Policy policy) method.
+Covered test cases:
+* Case 1: Policy Object with 2x Sub-objects
+* Case 2: Policy Object 1 with 3 Sub-objects, Policy object 2 with 1 sub-object, Policy object 3 with 2 sub-objects, Policy object 4 with 1 object
+* Case 3: Policy without objects (Premium = 0)
+* Case 4: Passing a null object to the method should throw IllegalArgumentException
