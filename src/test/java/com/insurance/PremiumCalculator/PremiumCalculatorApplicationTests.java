@@ -79,7 +79,7 @@ class PremiumCalculatorApplicationTests {
 
 		assertEquals(2.28, policyService.calculatePremium(policyCase1));
 		assertEquals(17.13, policyService.calculatePremium(policyCase2));
-		assertEquals(0.0, policyService.calculatePremium(policyCase3));
+		assertEquals(0.1, policyService.calculatePremium(policyCase3));
 
 /*		// Case 4:
 		// Passing a null object to calculatePremium should throw IllegalArgumentException due to @NotNull annotation
