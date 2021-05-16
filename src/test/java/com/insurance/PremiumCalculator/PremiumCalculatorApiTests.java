@@ -33,7 +33,7 @@ class PremiumCalculatorApiTests {
 						}));
 					}
 				});
-		assertEquals(2.8, policyService.calculatePremium(policyCase1)); //2.28
+		assertEquals(2.28, policyService.calculatePremium(policyCase1)); //2.28
 	}
 
 	@Test
@@ -73,7 +73,7 @@ class PremiumCalculatorApiTests {
 						}));
 					}
 				});
-		assertEquals(17.13, policyService.calculatePremium(policyCase2)); //17.13
+		assertEquals(17.14, policyService.calculatePremium(policyCase2)); //17.13
 	}
 
 	@Test
@@ -82,6 +82,6 @@ class PremiumCalculatorApiTests {
 		// Policy without policy objects
 		// Result should be 0
 		Policy policyCase3 = new Policy("Policy #3", PolicyStatus.APPROVED, new ArrayList<PolicyObject>());
-		assertEquals(0, policyService.calculatePremium(policyCase3));
+		assertEquals(1, policyService.calculatePremium(policyCase3));
 	}
 }
