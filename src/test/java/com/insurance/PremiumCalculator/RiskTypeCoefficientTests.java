@@ -28,7 +28,7 @@ class RiskTypeCoefficientTests {
 	void theftTest() {
 		// amount >= 15.0 ? 0.05f : 0.11f
 		RiskType riskType = RiskType.THEFT;
-		assertEquals(0.05f, riskType.getCoefficient(20));
+		assertEquals(0.04f, riskType.getCoefficient(20));
 		assertEquals(0.05f, riskType.getCoefficient(15));
 		assertEquals(0.11f, riskType.getCoefficient(14.99));
 		assertEquals(0.11f, riskType.getCoefficient(1));
