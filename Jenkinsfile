@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
                 git 'https://github.com/KruumsLV/PremiumCalculator.git'
                 bat '.\\mvnw clean compile'
