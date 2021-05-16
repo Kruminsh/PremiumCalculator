@@ -33,7 +33,7 @@ class PremiumCalculatorApiTests {
 						}));
 					}
 				});
-		assertEquals(2.28, policyService.calculatePremium(policyCase1));
+		assertEquals(2.29, policyService.calculatePremium(policyCase1)); //2.28
 	}
 
 	@Test
@@ -73,7 +73,7 @@ class PremiumCalculatorApiTests {
 						}));
 					}
 				});
-		assertEquals(17.13, policyService.calculatePremium(policyCase2));
+		assertEquals(17.12, policyService.calculatePremium(policyCase2)); //17.13
 	}
 
 	@Test
