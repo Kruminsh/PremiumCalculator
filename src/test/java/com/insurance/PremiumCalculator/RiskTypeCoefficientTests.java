@@ -20,7 +20,7 @@ class RiskTypeCoefficientTests {
 		RiskType riskType = RiskType.FIRE;
 		assertEquals(0.024f, riskType.getCoefficient(110));
 		assertEquals(0.024f, riskType.getCoefficient(100.01));
-		assertEquals(0.014f, riskType.getCoefficient(100));
+		assertEquals(0.04f, riskType.getCoefficient(100));
 		assertEquals(0.014f, riskType.getCoefficient(99.99));
 	}
 
