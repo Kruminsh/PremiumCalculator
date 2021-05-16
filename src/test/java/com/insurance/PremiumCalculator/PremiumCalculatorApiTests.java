@@ -6,20 +6,18 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 import java.util.ArrayList;
 
 @SpringBootTest
-class PremiumCalculatorApplicationTests {
+class PremiumCalculatorApiTests {
 
 	@Autowired
 	private PolicyService policyService;
 
 	@Test
-	void calculatePremiumTest() {
-
+	void OnePolicyObject() {
 		// Case 1:
 		// Risk type = FIRE, Sum insured = 100.00
 		// Risk type = FIRE, Sum insured = 100.00
@@ -35,7 +33,11 @@ class PremiumCalculatorApplicationTests {
 						}));
 					}
 				});
+		assertEquals(2.28, policyService.calculatePremium(policyCase1));
+	}
 
+	@Test
+	void MultiplePolicyObjects() {
 		// Case 2:
 		// Risk type = FIRE, Sum insured = 500.00
 		// Risk type = FIRE, Sum insured = 102.51
@@ -71,20 +73,15 @@ class PremiumCalculatorApplicationTests {
 						}));
 					}
 				});
+		assertEquals(17.13, policyService.calculatePremium(policyCase2));
+	}
 
+	@Test
+	void NoPolicyObjects() {
 		// Case 3:
 		// Policy without policy objects
 		// Result should be 0
 		Policy policyCase3 = new Policy("Policy #3", PolicyStatus.APPROVED, new ArrayList<PolicyObject>());
-
-		assertEquals(2.28, policyService.calculatePremium(policyCase1));
-		assertEquals(17.13, policyService.calculatePremium(policyCase2));
-		assertEquals(0.0, policyService.calculatePremium(policyCase3));
-
-	}
-
-	@Test
-	void testCaseNumber2() {
-		assertEquals(3.0, 3.1);
+		assertEquals(0, policyService.calculatePremium(policyCase3));
 	}
 }
