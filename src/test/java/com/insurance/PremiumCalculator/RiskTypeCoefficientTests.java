@@ -30,7 +30,7 @@ class RiskTypeCoefficientTests {
 		RiskType riskType = RiskType.THEFT;
 		assertEquals(0.05f, riskType.getCoefficient(20));
 		assertEquals(0.05f, riskType.getCoefficient(15));
-		assertEquals(0.1f, riskType.getCoefficient(14.99));
+		assertEquals(0.11f, riskType.getCoefficient(14.99));
 		assertEquals(0.11f, riskType.getCoefficient(1));
 	}
 }
