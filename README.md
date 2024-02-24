@@ -1,4 +1,5 @@
 # Policy Premium Calculator WEB API
+A small premium calculator solution as part of online assessment.
 
 ### Built with
 * Java 8
